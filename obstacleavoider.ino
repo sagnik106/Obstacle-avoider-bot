@@ -34,7 +34,7 @@ Serial.println(distance);
 delay(200);
 if(distance<th)
 {
-  delay(100);
+  bck();
   lft();
   Serial.println("LEFT");
 }
@@ -46,7 +46,7 @@ else
 }
 void fwd()
 {
-  digitalWrite(lm1,HIGH);
+  analogWrite(lm1,225);
   analogWrite(lm2,0);
   analogWrite(rm1,140);
   analogWrite(rm2,0);
@@ -71,4 +71,12 @@ void stp()
   digitalWrite(lm2,LOW);
   digitalWrite(rm1,LOW);
   digitalWrite(rm2,LOW);
+}
+void bck()
+{
+  analogWrite(lm2,140);
+  analogWrite(lm1,0);
+  analogWrite(rm2,140);
+  analogWrite(rm1,0);
+
 }
