@@ -1,11 +1,11 @@
-#define ECHOPIN 3
-#define TRIGPIN 2
-#define b 8
-#define lm1 10
-#define lm2 11
-#define rm1 12
-#define rm2 5
-#define th 30
+#define ECHOPIN 3 //Echo pin
+#define TRIGPIN 2 //Trig pin
+#define b 8 //+5V supply for Vcc
+#define lm1 10//left motor 1
+#define lm2 11//left motor 2
+#define rm1 12//right motor 1
+#define rm2 5//right motor 2
+#define th 30//Setting threshold value to 30 cm
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(9600);
@@ -34,7 +34,7 @@ Serial.println(distance);
 delay(200);
 if(distance<th)
 {
-  bck();
+  bck();//momentum control
   lft();
   Serial.println("LEFT");
 }
